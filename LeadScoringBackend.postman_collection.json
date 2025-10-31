@@ -1,0 +1,62 @@
+{
+  "info": {
+    "name": "Lead Scoring Backend",
+    "_postman_id": "12345678-90ab-cdef-1234-567890abcdef",
+    "description": "API collection for Lead Scoring Backend assignment",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Set Offer",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"AI Outreach Automation\",\n  \"value_props\": [\"24/7 outreach\", \"6x more meetings\"],\n  \"ideal_use_cases\": [\"B2B SaaS mid-market\"]\n}"
+        },
+        "url": { "raw": "http://localhost:5000/api/offer", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["api", "offer"] }
+      }
+    },
+    {
+      "name": "Upload Leads CSV",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            { "key": "file", "type": "file", "src": "" }
+          ]
+        },
+        "url": { "raw": "http://localhost:5000/api/leads/upload", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["api", "leads", "upload"] }
+      }
+    },
+    {
+      "name": "Run Scoring",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": { "raw": "http://localhost:5000/api/score", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["api", "score"] }
+      }
+    },
+    {
+      "name": "Get Results",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "http://localhost:5000/results", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["results"] }
+      }
+    },
+    {
+      "name": "Export Results as CSV",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "http://localhost:5000/api/score/export", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["api", "score", "export"] }
+      }
+    }
+  ]
+}

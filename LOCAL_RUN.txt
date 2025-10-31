@@ -1,0 +1,5 @@
+Created structured project. To run locally:
+1. cd lead-scoring-backend-structured
+2. cp .env.example .env (set OPENAI_API_KEY)
+3. npm install
+4. npm run dev
